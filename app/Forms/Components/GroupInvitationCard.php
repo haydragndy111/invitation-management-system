@@ -180,6 +180,7 @@ class GroupInvitationCard extends Field
                             'group_id' => $this->group->id,
                             'email' => $data['email'],
                             'status' => InvitationConstants::STATUS_INACTIVE,
+                            'num_of_sends' => 1,
                         ]);
 
                         Mail::to($data['email'])->send(new SurveyInvitationMail($data['email'], $this->survey, $invitation));
