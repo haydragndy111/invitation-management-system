@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Admin;
 use App\Models\Group;
+use App\Models\Survey;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,12 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
         Admin::create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
             'password' => Hash::make('password')
+        ]);
+
+        Survey::create([
+            'name' => 'BCA360',
         ]);
 
         Group::create([
