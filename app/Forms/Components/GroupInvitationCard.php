@@ -166,7 +166,9 @@ class GroupInvitationCard extends Field
                 })
                 ->form([
                     TextInput::make('email')
-                        ->label(__('translations.components.evaluation_invitations.email'))
+                        ->label('')
+                        ->placeholder(__('translations.components.evaluation_invitations.email_place_holder'))
+                        ->suffixIcon('heroicon-o-user-circle')
                         ->email()
                         ->required()
                 ])

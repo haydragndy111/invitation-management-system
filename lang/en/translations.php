@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'survey_evaluation' => 'Evaluation',
+    'survey_evaluation' => ':survey Evaluation',
     'self_valuation' => 'Self Evaluation',
     'final_report' => 'Final Report',
 
@@ -55,7 +55,7 @@ return [
             'status' => 'Status',
             'num_of_sends' => 'Numbers Of Sends',
             'sending_date' => 'Sending Date',
-            'email' => 'Email',
+            'email_place_holder' => 'Please enter email here',
         ],
     ],
     'widgets' => [

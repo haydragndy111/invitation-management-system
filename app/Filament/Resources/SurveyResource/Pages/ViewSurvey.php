@@ -43,18 +43,19 @@ class ViewSurvey extends Page implements HasForms
         return trans('translations.resources.labels.surveys.view'). ' '. $this->record->name;
     }
 
-    #[On('refreshGroupCards')]
-    public function refreshGroupCards(): void
-    {
-        $this->form->fill();
-    }
+    // #[On('refreshGroupCards')]
+    // public function refreshGroupCards(): void
+    // {
+    //     $this->form->fill();
+    // }
 
     public function form(Form $form): Form
     {
         return $form
             ->schema([
                 Section::make('survey_evaluation')
-                    ->heading($this->record->name.' '.__('translations.survey_evaluation'))
+                    // ->heading($this->record->name.' '.__('translations.survey_evaluation'))
+                    ->heading(trans('translations.survey_evaluation', [ 'survey' => $this->record->name]))
                     ->collapsed()
                     ->schema([
                         TextInput::make('bca360_comments')

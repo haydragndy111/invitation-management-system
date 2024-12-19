@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'survey_evaluation' => 'تقييم',
+    'survey_evaluation' => 'تقييم :survey ',
     'self_valuation' => 'تقييم ذاتي',
     'final_report' => 'تقرير نهائي',
 
@@ -55,7 +55,7 @@ return [
             'status' => 'الحالة',
             'num_of_sends' => 'عدد مرات الإرسال',
             'sending_date' => 'تاريخ الإرسال',
-            'email' => 'الإيميل',
+            'email_place_holder' => 'يرجى إدخال الإيميل هنا',
         ],
     ],
     'widgets' => [
