@@ -33,9 +33,11 @@ return [
                 'model_label' => 'الاستبيان',
             ],
             'invitations' => [
-                'inactive' => 'غير مفعلة',
-                'opened' => 'مقروءة',
-                'completed' => 'مكتملة',
+                'status' => [
+                    'inactive' => 'غير مفعلة',
+                    'opened' => 'مقروءة',
+                    'completed' => 'مكتملة',
+                ]
             ],
         ],
     ],

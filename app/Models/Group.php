@@ -14,6 +14,19 @@ class Group extends Model
         'name_ar',
     ];
 
+    protected $appends = [
+        'name_by_locale',
+    ];
+
+    public function getNameByLocaleAttribute()
+    {
+        if (app()->getLocale() == 'en') {
+            return $this->name_en;
+        } elseif (app()->getLocale() == 'ar') {
+            return $this->name_ar;
+        }
+    }
+
     public function invitations()
     {
         return $this->hasMany(Invitation::class);

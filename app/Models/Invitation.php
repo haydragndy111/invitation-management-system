@@ -18,6 +18,15 @@ class Invitation extends Model
         'num_of_sends',
     ];
 
+    protected $appends = [
+        'status_label',
+    ];
+
+    public function getStatusLabelAttribute()
+    {
+        return __('translations.resources.labels.invitations.status.'.InvitationConstants::getStatuses()[$this->status]);
+    }
+
     public function group()
     {
         return $this->belongsTo(Group::class);

@@ -33,10 +33,12 @@ return [
                 'model_label' => 'Survey',
             ],
             'invitations' => [
-                'inactive' => 'Inactive',
-                'opened' => 'Opened',
-                'completed' => 'Completed',
-            ]
+                'status' => [
+                    'inactive' => 'Inactive',
+                    'opened' => 'Opened',
+                    'completed' => 'Completed',
+                ],
+            ],
         ],
     ],
     'components' => [

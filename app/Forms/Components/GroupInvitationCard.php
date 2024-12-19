@@ -128,17 +128,18 @@ class GroupInvitationCard extends Field
                 ->label(__('translations.components.evaluation_invitations.send_invitation'))
                 ->color('gray')
                 ->modalActions(fn ($action) => [
-                    $action->getModalSubmitAction()->color('success'),
+                    $action->getModalSubmitAction()->color('success')
+                        ->extraAttributes([
+                            'style' => 'margin: 0 auto;'
+                        ]),
                 ])
-                ->modalFooterActionsAlignment(Alignment::Center)
-                ->size(ActionSize::Large)
+                ->modalSubmitActionLabel(__('translations.components.evaluation_invitations.send_invitation'))
                 ->disabled(function () {
                     return $this->getInvitation() == null ? false : true;
                 })
                 ->icon('heroicon-o-paper-airplane')
                 ->modalDescription(function(){
                     $locale = app()->getLocale();
-                    // dd($locale);;
                     if($locale == 'ar'){
                         return new HtmlString('<p>يمكنك إرسال دعوة من خلال القالب التالي</p>
                             <br>
@@ -224,7 +225,6 @@ class GroupInvitationCard extends Field
     {
         $this->group = $group;
         $invitation = $group->invitations()->where('status', InvitationConstants::STATUS_INACTIVE)->first();
-        // dd($invitation);
         if ($invitation) {
             $this->invitation($invitation);
         }
@@ -238,16 +238,12 @@ class GroupInvitationCard extends Field
 
     public function getGroupName()
     {
-        if (app()->getLocale() == 'en') {
-            return $this->group->name_en;
-        } elseif (app()->getLocale() == 'ar') {
-            return $this->group->name_ar;
-        }
+        return $this->group->name_by_locale;
     }
 
     public function getInvitationStatus()
     {
-        return __('translations.resources.labels.invitations.'.InvitationConstants::getStatuses()[$this->invitation->status]);
+        return $this->invitation->status_label;
     }
 
     public function getInvitationDate()
