@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('invitations:send-reminders')->cron('0 9,15,21 * * *');
+        //
     }
 
     /**
